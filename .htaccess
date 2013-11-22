@@ -1,0 +1,13 @@
+SetEnv APPENV local
+AddType text/x-component .htc
+
+<IfModule mod_rewrite.c>
+  #RewriteBase /2013/ono
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*) index.php?/$1
+</IfModule>
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /index.php
+</IfModule>
