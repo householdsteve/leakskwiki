@@ -11,7 +11,7 @@ class Home_model extends CI_Model {
 	
 	public function get_all($limit,$start){
 	  $this->db->limit($limit, $start);
-	  $this->db->order_by("expires", "desc");
+	  $this->db->order_by("id", "desc");
 	  $query = $this->db->get('entries');
 	  if($query->result_array()){
 	    return $query->result_array();
