@@ -102,9 +102,9 @@ class Search extends CI_Controller {
 	{
     $q = $this->curl->simple_get('http://api.kwikdesk.com/search?q='.$args);
     $qd = json_decode($q);
-    echo "<pre>";
-    print_r($qd);
-    echo "</pre>";
+    // echo "<pre>";
+    //     print_r($qd);
+    //     echo "</pre>";
     
     foreach($qd->results as $row){
        
@@ -127,7 +127,7 @@ class Search extends CI_Controller {
     }
     
     
-  		    
+  	echo "Search Complete";    
 		//$this->load->view("search",$this->_data);
 	}
 	

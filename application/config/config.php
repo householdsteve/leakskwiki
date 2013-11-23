@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '//beta.kwikileaks.com';
+$config['base_url']	= '//kwikileaks.herokuapp.com';
 
 /*
 |--------------------------------------------------------------------------
