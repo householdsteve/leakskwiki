@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '127.0.0.1';
-$db['default']['username'] = 'stevem';
-$db['default']['password'] = 'borgo18';
-$db['default']['database'] = 'kwikileaks';
+$db['default']['hostname'] = 'frienduser.db.3753116.hostedresource.com';
+$db['default']['username'] = 'frienduser';
+$db['default']['password'] = 'St3v3sFriend';
+$db['default']['database'] = 'frienduser';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
