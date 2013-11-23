@@ -20,24 +20,16 @@ class Welcome extends CI_Controller {
 	 public function __construct()
  	{
     parent::__construct();
- 		$this->load->database();
- 		$this->load->library('curl');
+ 		$this->load->library('twig');
+ 		$this->load->helper('url');
  	}
  	
 	public function index()
 	{
 		$this->load->view('welcome_message');
+		
 	}
 	
-	public function search($args=null)
-	{
-    $q = $this->curl->simple_get('http://api.kwikdesk.com/search?q=happy');
-    
-    echo "<pre>";
-    print_r(json_decode($q));
-    echo "</pre>";
-		//$this->load->view("search",$this->_data);
-	}
 }
 
 /* End of file welcome.php */
