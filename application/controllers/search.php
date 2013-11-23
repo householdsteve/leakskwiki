@@ -96,6 +96,8 @@ class Search extends CI_Controller {
 	    foreach($list as $row){
 	      $this->find($row);
 	    }
+	    
+	    echo "Search Complete";
 	}
 	
 	public function find($args=null)
@@ -125,9 +127,7 @@ class Search extends CI_Controller {
         	           $this->db->insert('entries', $insert_array );
       	            }
     }
-    
-    
-  	echo "Search Complete";    
+        
 		//$this->load->view("search",$this->_data);
 	}
 	
