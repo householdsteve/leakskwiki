@@ -13,7 +13,9 @@
         <meta property="og:title" content="{{ pagevars.og.title }}">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="{{ pagevars.baseurl }}/assets/img/favicon.ico">
-        <link rel="stylesheet" href="{{ pagevars.baseurl }}/assets/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ pagevars.baseurl }}/assets/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="{{ pagevars.baseurl }}/assets/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
         
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>

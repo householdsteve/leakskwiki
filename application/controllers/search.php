@@ -37,8 +37,68 @@ class Search extends CI_Controller {
   	);
     return preg_replace($search, $replace, trim($str));
   }
+  
+  public function index($args=null)
+	{
+	  $list = array(
+	    "sex",
+	    "gay",
+	    "boobs",
+	    "facebook",
+	    "twitter",
+	    "snapchat",
+	    "lesbian",
+	    "test",
+	    "fuck",
+	    "tired",
+	    "bitch",
+	    "crap",
+	    "suck",
+	    "world",
+	    "hate",
+	    "love",
+	    "pussy",
+	    "asshole",
+	    "social",
+	    "kwik",
+	    "dick",
+	    "penis",
+	    "twerk",
+	    "miley",
+	    "gaga",
+	    "feel",
+	    "tired",
+	    "girl",
+	    "woman",
+	    "boy",
+	    "man",
+	    "human",
+	    "rights",
+	    "success",
+	    "fail",
+	    "animals",
+	    "cat",
+	    "dog",
+	    "cunt",
+	    "fag",
+	    "happy",
+	    "sad",
+	    "network",
+	    "fashion",
+	    "trend",
+	    "normal",
+	    "raped",
+	    "racism",
+	    "loser",
+	    "winner",
+	    "jesus"
+	    );
+	    foreach($list as $row){
+	      $this->find($row);
+	    }
+	}
 	
-	public function index($args=null)
+	public function find($args=null)
 	{
     $q = $this->curl->simple_get('http://api.kwikdesk.com/search?q='.$args);
     $qd = json_decode($q);

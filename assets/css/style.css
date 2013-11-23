@@ -1,4 +1,47 @@
-/*
-We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
-However, this blank file is available if you prefer
-*/
+body {
+  color: red;
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+}
+a {
+  color: red;
+}
+a:hover {
+  color: red;
+}
+.infinite-more-link {
+  display: none;
+}
+.underline {
+  border-bottom: red 2px solid;
+}
+.underline.thin {
+  border-bottom: red 2px solid;
+}
+section.head {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+section.head .logo {
+  border-bottom: 107px solid red;
+}
+section.head h2 {
+  margin-bottom: 30px;
+}
+section.head .addthis_toolbox {
+  margin-top: 20px;
+}
+section.content {
+  margin-bottom: 40px;
+}
+section.content h3 {
+  letter-spacing: 0.03em;
+}

@@ -27,10 +27,14 @@ class Home extends CI_Controller {
 	public function index($args=null)
 	{
 	  $this->load->database();
-       
+       $ok = "nope";
+       if($this->input->is_ajax_request()){
+         $ok = "yep";
+       }
         $pagevars = array(
                "appenv"=>$_SERVER["APPENV"], // THIS ALLOWS US TO WRITE VARIABLES BASE ON ENVIRONMENT
                "baseurl"=> base_url(), // THE BASE URL OF THE SITE
+               "ajax" => $ok,
                "googleanalytics" => "XX-XXXXXXXX", // THIS IS THE GOOGLE ANALYTICS TRACKING ID FROM YOUR CONTROL PANEL
                "titlebase" => "Progress Custom Screen Printing - ", // THE FIRST PART OF THE PAGE TITLE
                "title"=>"Welcome", // THE SECOND PART OF PAGE TITLE. THIS SHOULD BE EXTENDED BELOW BASED ON CONTENT
@@ -41,19 +45,19 @@ class Home extends CI_Controller {
           );
           
           $this->load->library('pagination');
-          		$this->load->model('home_model');
+          $this->load->model('home_model');
 
           		$config['base_url'] = '/home/index';
               $config['uri_segment'] = 3;
               $config['total_rows'] = $this->home_model->count_social_rows();
-              $config['per_page'] = 5;
+              $config['per_page'] = 20;
               $config['display_pages'] = FALSE;
               $config['anchor_class'] = 'class="infinite-more-link"';
               $config['prev_link'] = FALSE;
               $config['first_link'] = FALSE;
               $config['last_link'] = FALSE;
-              $config['next_tag_open'] = '<div>';
-              $config['next_tag_close'] = '</div>';
+              $config['next_tag_open'] = '';
+              $config['next_tag_close'] = ' ';
 
               $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
