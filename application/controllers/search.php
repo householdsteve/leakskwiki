@@ -99,6 +99,14 @@ class Search extends CI_Controller {
 	    "jewish",
 	    "fight",
 	    "drug",
+	    "bong",
+	    "weed",
+	    "cocaine",
+	    "heroin",
+	    "meth",
+	    "virgin",
+	    "cheated",
+	    "grindr",
 	    "jesus"
 	    );
 	    foreach($list as $row){
