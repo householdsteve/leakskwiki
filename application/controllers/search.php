@@ -91,6 +91,14 @@ class Search extends CI_Controller {
 	    "racism",
 	    "loser",
 	    "winner",
+	    "confess",
+	    "confession",
+	    "war",
+	    "depressed",
+	    "jew",
+	    "jewish",
+	    "fight",
+	    "drug",
 	    "jesus"
 	    );
 	    foreach($list as $row){
