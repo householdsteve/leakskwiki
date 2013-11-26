@@ -15,6 +15,7 @@
 |
 */
 $config['base_url']	= '//kwikileaks.herokuapp.com';
+//$config['base_url']	= '//beta.kwikileaks.com';
 
 /*
 |--------------------------------------------------------------------------

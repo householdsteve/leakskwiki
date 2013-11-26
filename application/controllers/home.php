@@ -21,9 +21,13 @@ class Home extends CI_Controller {
  	{
     parent::__construct();
  		$this->load->library('twig');
+ 		$this->load->library('parse');
  		$this->load->helper('url');
  	}
-	
+	public function tester($args=null)
+	{
+	  print_r($this->parse->user("steve","20armani13"));
+	}
 	public function index($args=null)
 	{
 	  $this->load->database();
@@ -35,13 +39,12 @@ class Home extends CI_Controller {
                "appenv"=>$_SERVER["APPENV"], // THIS ALLOWS US TO WRITE VARIABLES BASE ON ENVIRONMENT
                "baseurl"=> base_url(), // THE BASE URL OF THE SITE
                "ajax" => $ok,
-               "googleanalytics" => "XX-XXXXXXXX", // THIS IS THE GOOGLE ANALYTICS TRACKING ID FROM YOUR CONTROL PANEL
                "titlebase" => "Kwiki Leaks - ", // THE FIRST PART OF THE PAGE TITLE
                "title"=>"Nothing is deleted", // THE SECOND PART OF PAGE TITLE. THIS SHOULD BE EXTENDED BELOW BASED ON CONTENT
                "description" => "Kwikdesk allows users to anonymously share their thoughts. These 'kwiks' should be deleted automatically, however just as everything else on the internet it will also be reproduced. Please take time to browse the most popular words on facebook and watch how humans express themselves when no one is reading.", // THIS IS FOR META TAGS
                "keywords" => "kwikdesk, kwik, snapchat, twitter, facebook, leaks, wiki", // THIS TOO, THESE BOTH SHOULD BE EXTENDED BASED ON CONTEXT
-               "og" => array("image"=> base_url()."/assets/img/kwikileaks-kwikdesk_logo.png",
-                             "title"=> "Kwiki Leaks - No one is readng...") // THESE ARE FOR SOCIAL CHANNELS LIKE FACEBOOK WHERE AN IMAGE IS SHARED.
+               "og" => array("image"=> base_url()."assets/img/kwikileaks-kwikdesk_logo.png",
+                             "title"=> "Kwiki Leaks - No one is reading...") // THESE ARE FOR SOCIAL CHANNELS LIKE FACEBOOK WHERE AN IMAGE IS SHARED.
           );
           
           $this->load->library('pagination');
