@@ -21,11 +21,11 @@ class Home extends CI_Controller {
  	{
     parent::__construct();
  		$this->load->library('twig');
- 		$this->load->library('parse');
  		$this->load->helper('url');
  	}
 	public function tester($args=null)
 	{
+	  $this->load->library('parse');
 	  print_r($this->parse->user("steve","20armani13"));
 	}
 	public function index($args=null)
