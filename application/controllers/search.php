@@ -38,6 +38,30 @@ class Search extends CI_Controller {
     return preg_replace($search, $replace, trim($str));
   }
   
+  public function fraction_time()
+  {
+    $t = intval(date('i'));
+    switch($t){
+      case $t == 0 || $t < 10:
+        $frac = 0;
+      break;
+      case $t > 9 && $t < 19:
+        $frac = 1;
+      break;
+      case $t > 19 && $t < 30:
+        $frac = 2;
+      break;
+      case $t > 29 && $t < 50:
+        $frac = 3;
+      break;
+      case $t > 49 && $t < 60:
+        $frac = 4;
+      break;
+    }
+    echo $frac;
+    return $frac;
+  }
+  
   public function index($args=null)
 	{
 	  $list = array(
@@ -107,8 +131,46 @@ class Search extends CI_Controller {
 	    "virgin",
 	    "cheated",
 	    "grindr",
+	    "secret",
+	    "hurt",
+	    "god",
+	    "honest",
+	    "wired",
+	    "wife",
+	    "husband",
+	    "sister",
+	    "brother",
+	    "friend",
+	    "stole",
+	    "gave",
+	    "lost",
+	    "virgin",
+	    "bully",
+	    "nerd",
+	    "geek",
+	    "blowjob",
+	    "handjob",
+	    "bomb",
+	    "kill",
+	    "television",
+	    "internet",
+	    "cable",
+	    "summer",
+	    "winter",
+	    "fall",
+	    "spring",
+	    "arab",
+	    "gun",
+	    "today",
+	    "year",
+	    "tomorrow",
+	    "beer",
+	    "weapon",
+	    "jail",
 	    "jesus"
 	    );
+	    
+	    shuffle($list);
 	    foreach($list as $row){
 	      $this->find($row);
 	    }
