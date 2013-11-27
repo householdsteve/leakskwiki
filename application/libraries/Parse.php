@@ -49,6 +49,15 @@ class Parse {
     
 		return $this->parse_user_instance;
 	}
+	
+	public function find($classval) 
+	{
+	  $local = new parseQuery($class = $classval);
+	  $local->whereAll("hashtags",array("man"));
+    $result = $local->find();
+    
+		return $result;
+	}
 
 	/**
 	 * Execute the template and send to CI output

@@ -27,6 +27,9 @@ class Home extends CI_Controller {
 	{
 	  $this->load->library('parse');
 	  print_r($this->parse->user("steve","20armani13"));
+	  echo "<pre>";
+	  print_r($this->parse->find("test"));
+	  echo "</pre>";
 	}
 	public function index($args=null)
 	{
