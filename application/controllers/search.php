@@ -167,6 +167,11 @@ class Search extends CI_Controller {
 	    "beer",
 	    "weapon",
 	    "jail",
+	    "irishtech",
+	    "kwikdesk",
+	    "spotify",
+	    "joke",
+	    "unicorns",
 	    "jesus"
 	    );
 	    
