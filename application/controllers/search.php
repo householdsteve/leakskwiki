@@ -179,7 +179,8 @@ class Search extends CI_Controller {
 	    "want",
 	    "truth",
 	    "lie",
-	    "lied"
+	    "lied",
+	    "relationships"
 	    );
 	    
 	    shuffle($list);
