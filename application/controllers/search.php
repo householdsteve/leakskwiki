@@ -172,7 +172,14 @@ class Search extends CI_Controller {
 	    "spotify",
 	    "joke",
 	    "unicorns",
-	    "jesus"
+	    "jesus",
+	    "thanksgiving",
+	    "xmas",
+	    "christmas",
+	    "want",
+	    "truth",
+	    "lie",
+	    "lied"
 	    );
 	    
 	    shuffle($list);
