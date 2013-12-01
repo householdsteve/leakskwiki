@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "home";
 $route['search/fraction_time'] = 'search/fraction_time';
+$route['search/pull_tags'] = 'search/pull_tags';
 $route['search/(:any)'] = 'search/index/$1';
 $route['home/tester'] = 'home/tester';
 $route['home/(:any)'] = 'home/index/$1';

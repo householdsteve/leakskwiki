@@ -222,6 +222,59 @@ class Search extends CI_Controller {
 		//$this->load->view("search",$this->_data);
 	}
 	
+	public function pull_tags()
+	{
+	  $query = $this->db->get('entries');
+	  if($query->result_array()){
+	    foreach($query->result_array() as $row){
+	      preg_match_all("/#(\w+)/", $row['content'], $matches);
+	      
+	      foreach($matches[1] as $tag){
+	            $insert_array = array(
+ 	               'hashtag'    => strtolower($tag),
+ 	               'count' => "1"
+                 );
+                 
+                 
+       	                                         
+                 $tagobject = $this->check_tag($tag);
+                  
+                  print_r( $tagobject );
+     	            echo "<br>";
+                  
+         	          if(is_object($tagobject)){
+         	            $this->db->where('hashtag', $tag);
+         	            $this->db->update('hashtags', array("count"=> $tagobject->count + 1) );
+
+         	         }else{
+         	           $this->db->insert('hashtags', $insert_array );
+
+         	         }
+	      }
+	        
+               
+               
+           	            
+	    }
+    }
+  
+	  
+	}
+	
+	public function check_tag($id = false){
+    $this->db->where('hashtag',$id);
+ 		$query=$this->db->get('hashtags',1,0);
+ 		$row = $query->row_array();
+ 		if(isset($row["hashtag"])){
+ 		  $q = $query->row();
+ 		  $query->free_result();
+ 		  return $q;
+ 		}else{
+ 		  return false;
+ 		}
+ 		
+   }
+
 	public function match($id = false){
     $this->db->where('unique_id',$id);
  		$query=$this->db->get('entries',1,0);
