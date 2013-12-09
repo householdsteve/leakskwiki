@@ -216,11 +216,36 @@ class Search extends CI_Controller {
         	         
         	         if(!$this->match($finalid)){
         	           $this->db->insert('entries', $insert_array );
+        	           
+        	           // insert each post twice
+        	            preg_match_all("/#(\w+)/", $row->content, $matches);
+
+               	      foreach($matches[1] as $tag){
+               	        $insert_array['hashtag'] = $tag;
+             	          $this->db->insert('entries_split', $insert_array );
+             	        }
       	            }
     }
         
 		//$this->load->view("search",$this->_data);
 	}
+	
+	public function pull_posts()
+	{
+	  $query = $this->db->get('entries');
+	  if($query->result_array()){
+	    foreach($query->result_array() as $row){
+        // insert each post twice
+          preg_match_all("/#(\w+)/", $row['content'], $matches);
+
+   	      foreach($matches[1] as $tag){
+   	        $row['hashtag'] = $tag;
+   	        unset($row['id']);
+ 	          $this->db->insert('entries_split', $row );
+ 	        }
+      }
+    }
+  }
 	
 	public function pull_tags()
 	{
@@ -238,7 +263,7 @@ class Search extends CI_Controller {
                  
        	                                         
                  $tagobject = $this->check_tag($tag);
-                  
+                   
                   print_r( $tagobject );
      	            echo "<br>";
                   
